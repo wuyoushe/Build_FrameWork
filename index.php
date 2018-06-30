@@ -39,17 +39,17 @@
 /**
 * 首页重构
 */
-require_once __DIR__.'/init.php';
-
-$input = $request->get('name', 'World');
-
-$response = new Response(sprintf(
-	'Hello %s',
-	htmpspecialchars($input, ENT_QUOTES, 'UTF-8')
-));
-
-//send()方法返回Reponse对象里的内容到客户端(先根据内容发送HTTP头信息)
-$response->send();
+//require_once __DIR__.'/init.php';
+//
+//$input = $request->get('name', 'World');
+//
+//$response = new Response(sprintf(
+//	'Hello %s',
+//	htmpspecialchars($input, ENT_QUOTES, 'UTF-8')
+//));
+//
+////send()方法返回Reponse对象里的内容到客户端(先根据内容发送HTTP头信息)
+//$response->send();
 
 
 
