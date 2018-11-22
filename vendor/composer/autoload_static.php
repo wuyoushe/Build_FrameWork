@@ -23,11 +23,13 @@ class ComposerStaticInit4f1688f710f19329e559403c1d82da9d
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\EventDispatcher\\' => 34,
+            'Symfony\\Component\\DependencyInjection\\' => 38,
             'Symfony\\Component\\Debug\\' => 24,
         ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'Psr\\Container\\' => 14,
         ),
     );
 
@@ -60,6 +62,10 @@ class ComposerStaticInit4f1688f710f19329e559403c1d82da9d
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
         ),
+        'Symfony\\Component\\DependencyInjection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/dependency-injection',
+        ),
         'Symfony\\Component\\Debug\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/debug',
@@ -68,6 +74,14 @@ class ComposerStaticInit4f1688f710f19329e559403c1d82da9d
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/../..' . '/src',
     );
 
     public static $classMap = array (
@@ -85,6 +99,7 @@ class ComposerStaticInit4f1688f710f19329e559403c1d82da9d
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit4f1688f710f19329e559403c1d82da9d::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit4f1688f710f19329e559403c1d82da9d::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit4f1688f710f19329e559403c1d82da9d::$fallbackDirsPsr4;
             $loader->classMap = ComposerStaticInit4f1688f710f19329e559403c1d82da9d::$classMap;
 
         }, null, ClassLoader::class);

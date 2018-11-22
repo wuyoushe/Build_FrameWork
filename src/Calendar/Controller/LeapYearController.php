@@ -6,14 +6,19 @@
  * Time: 13:10
  */
 
-use Symfony\Component\Routing;
+// example.com/src/Calendar/Controller/LeapYearController.php
+namespace Calendar\Controller;
+
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Calendar\Model\LeapYear;
 
 class LeapYearController
 {
-    public function indexAction($request)
+    public function index(Request $request, $year)
     {
-        if (is_leap_year($request->attributes->get('year'))) {
+        $leapYear = new LeapYear();
+        if ($leapYear->isLeapYear($year)) {
             return new Response('Yep, this is a leap year!');
         }
 
