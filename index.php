@@ -3,11 +3,11 @@
 
 //require_once __DIR__.'/vendor/autoload.php';
 
-//use Symfony\Component\HttpFoundation\Request;
-//use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 //createFromGlobals()方法会根据当前的PHP的全局变量生成一个Request对象
-//$request = Request::createFromGlobals();
+$request = Request::createFromGlobals();
 
 
 // $input = isset($_GET['name']) ? $_GET['name'] ? 'World';
@@ -16,15 +16,15 @@
 
 // printf('Hello %s', htmpspecialchars($input, ENT_QUOTES, 'UTF-8')); 
 
-// $input = $request->get('name', 'World');
+ $input = $request->get('name', 'World');
 
-// $response = new Response(sprintf(
-// 	'Hello %s',
-// 	htmpspecialchars($input, ENT_QUOTES, 'UTF-8')
-// ));
+ $response = new Response(sprintf(
+ 	'Hello %s',
+     htmlspecialchars($input, ENT_QUOTES, 'UTF-8')
+ ));
 
 // //send()方法返回Reponse对象里的内容到客户端(先根据内容发送HTTP头信息)
-// $response->send();
+ $response->send();
 
 //信任的ip获取
 // if ($myIp == $_SERVER['HTTP_X_FORWARDED_FOR'] || $myIp == $_SERVER['REMOTE_ADDR']) {
